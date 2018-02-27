@@ -1,0 +1,10 @@
+.cocktail__item {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 1rem;
+}
+
+.cocktail__item>span:nth-child(2) {
+    cursor: pointer;
+    font-size: 1.3rem;
+}
