@@ -1,0 +1,15 @@
+.ingredient__full-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.ingredient__full-table thead td {
+    background-color: lightblue;
+    font-weight: bold;
+    /* color: white; */
+    padding: 0.2rem;
+}
+
+.ingredient__full-table tbody tr:nth-child(odd) {
+    background-color: lightgray;
+}
