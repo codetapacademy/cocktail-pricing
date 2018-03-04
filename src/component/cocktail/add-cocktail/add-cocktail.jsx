@@ -33,9 +33,7 @@ class AddCocktail extends Component{
             this.pushCocktail();
         }
     }
-
-
-
+    
     render(){
             return(
                 <p>
