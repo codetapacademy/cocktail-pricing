@@ -22,16 +22,27 @@ class AddCocktail extends Component{
                     }
                 )
             this.props.fbi(this.somethingElse.value);
+            this.somethingElse.value = '';
+            this.somethingElse.focus();
         } catch (e) {
         }
     }
+
+    handleEnter = (event) => {
+        if(event.keyCode === 13) {
+            this.pushCocktail();
+        }
+    }
+
 
 
     render(){
             return(
                 <p>
                     <input
-                        ref={qwe => this.somethingElse = qwe}/>
+                        ref={qwe => this.somethingElse = qwe}
+                        onKeyDown={this.handleEnter}
+                        />
                     <button
                         onClick={this.pushCocktail}>
                         Carol is Awesome
