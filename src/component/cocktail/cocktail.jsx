@@ -102,9 +102,8 @@ class Cocktail extends Component{
     }
 
     async saveCocktail(cocktailObject) {
-        await axios.put(`${BASE_URL}cocktail/${cocktailObject.id}`, {
+        await axios.put(`${BASE_URL}cocktail/${cocktailObject.id}`, cocktailObject, {
             'Content-Type': 'application/json',
-            ...cocktailObject,
             method: 'PUT'
         }).then(result => {
             // remove the cocktail from state
