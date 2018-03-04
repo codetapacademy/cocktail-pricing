@@ -1,24 +1,22 @@
 {
   "cocktail": [
     {
-      "name": "coding is awesome",
-      "id": 6
-    },
-    {
-      "name": "wdardfs",
-      "id": 7
-    },
-    {
-      "name": "wdardfs",
-      "id": 8
-    },
-    {
-      "name": "asdasd",
-      "id": 9
+      "Content-Type": "application/json",
+      "id": 9,
+      "name": "Codtap is awesome",
+      "method": "PUT"
     },
     {
       "name": "asdasd",
       "id": 10
+    },
+    {
+      "name": "somehting new",
+      "id": 11
+    },
+    {
+      "name": "other thing",
+      "id": 12
     }
   ]
 }

@@ -4,7 +4,22 @@
     padding: 0 1rem;
 }
 
-.cocktail__item>span:nth-child(2) {
+.cocktail__item>button:nth-child(2) {
     cursor: pointer;
     font-size: 1.3rem;
+    margin-right: -1px;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border-width: 1px;
+}
+
+.cocktail__item>button:nth-child(3) {
+    font-size: 1.3rem;
+    border-width: 1px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+.cocktail__item>span:nth-child(1) {
+    flex-grow: 1;
 }

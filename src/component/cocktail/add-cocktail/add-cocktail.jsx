@@ -33,7 +33,7 @@ class AddCocktail extends Component{
             this.pushCocktail();
         }
     }
-    
+
     render(){
             return(
                 <p>
@@ -43,7 +43,7 @@ class AddCocktail extends Component{
                         />
                     <button
                         onClick={this.pushCocktail}>
-                        Carol is Awesome
+                        Add Cocktail
                     </button>
                 </p>
 
