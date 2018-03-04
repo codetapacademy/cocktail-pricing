@@ -85,16 +85,18 @@ class Cocktail extends Component{
     }
 
     async deleteCocktail(id) {
-        await axios.delete(`${BASE_URL}cocktail/${id}`, {
-            'Content-Type': 'application/json',
-            method: 'DELETE'
-        }).then(result => {
-            // remove the cocktail from state
-            this.setState({
-                cocktail: this.state.cocktail
-                            .filter(cocktail => cocktail.id !== id)
-            });
-        })
+        if(window.confirm('Are you sure?')) {
+            await axios.delete(`${BASE_URL}cocktail/${id}`, {
+                'Content-Type': 'application/json',
+                method: 'DELETE'
+            }).then(result => {
+                // remove the cocktail from state
+                this.setState({
+                    cocktail: this.state.cocktail
+                                .filter(cocktail => cocktail.id !== id)
+                });
+            })
+        }
         // if(confirm('any')) {
         // }
     }
