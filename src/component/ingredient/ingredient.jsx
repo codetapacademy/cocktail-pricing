@@ -62,13 +62,39 @@ class Ingredient extends Component {
         this.setState({validForm: !arr.length});
     }
 
+    createIngredient = () => {
+        const arr = Object.keys(this.state.formValueList);
+        let data = {};
+        arr.map(ingredientName => {
+            const simpleName = ingredientName.split('-')[1];
+            data[simpleName] = (simpleName === 'price' || simpleName === 'quantity') ? 
+                parseInt(this.state.formValueList[ingredientName].value, 10) : 
+                this.state.formValueList[ingredientName].value;
+        });
+        data.id = this.state.ingredient.length + 1;
+        this.createIngredientInDataBase(data);
+    }
+
+    async createIngredientInDataBase(data) {
+        await axios.put(`${BASE_URL}ingredient/${data.id}`, {
+            'Content-Type': 'application/json',
+            ...data,
+            method: 'PUT'
+        }).then(result => {
+            console.log(result);
+            debugger;
+        }, error => {
+            console.error(error);
+            debugger;
+        })
+    }
+
     updateStateWithForm = (aParam) => {
+        aParam.preventDefault();
         const {id, value, validity: {valid}} = aParam.target;
         if (id === 'create-it') {
-            window.alert('create it in the dabase');
-            return;
+            this.createIngredient();
         }
-        
         
         const {formValueList} = this.state;
         formValueList[id] = {
@@ -76,14 +102,7 @@ class Ingredient extends Component {
             valid
         };
         this.setState({formValueList})
-
         this.checkIfFormIsValid();
-
-        // console.group();
-        // console.log(aParam.target.id)
-        // console.log(aParam.target.value)
-        // console.log(valid)
-        // console.groupEnd();
     }
     render() {
         const { validForm } = this.state;

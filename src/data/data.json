@@ -13,6 +13,10 @@
     {
       "name": "margarita",
       "id": 13
+    },
+    {
+      "name": "13123",
+      "id": 14
     }
   ],
   "ingredient": [
@@ -26,38 +30,6 @@
     },
     {
       "id": 2,
-      "name": "Papa diablo",
-      "measure": "ml",
-      "price": 56,
-      "currency": "£",
-      "quantity": 700
-    },
-    {
-      "id": 3,
-      "name": "Papa diablo",
-      "measure": "ml",
-      "price": 56,
-      "currency": "£",
-      "quantity": 700
-    },
-    {
-      "id": 4,
-      "name": "Papa diablo",
-      "measure": "ml",
-      "price": 56,
-      "currency": "£",
-      "quantity": 700
-    },
-    {
-      "id": 5,
-      "name": "Papa diablo",
-      "measure": "ml",
-      "price": 56,
-      "currency": "£",
-      "quantity": 700
-    },
-    {
-      "id": 6,
       "name": "Papa diablo",
       "measure": "ml",
       "price": 56,
