@@ -1,19 +1,21 @@
 {
   "cocktail": [
     {
-      "name": "asdasd",
-      "id": 10
-    },
-    {
-      "name": "somehting new",
-      "id": 11
+      "Content-Type": "application/json",
+      "id": 11,
+      "name": "somehting new change",
+      "method": "PUT"
     },
     {
       "name": "other thing",
       "id": 12
+    },
+    {
+      "name": "margarita",
+      "id": 13
     }
   ],
-  "ingredient":[
+  "ingredient": [
     {
       "id": 1,
       "name": "Papa diablo",

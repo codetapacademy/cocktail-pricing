@@ -2,11 +2,34 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import { BASE_URL } from './constant'
 import AddIngredient from './add-ingredient'
-import './ingredient.css'
+import './ingredient.css';
 
 class Ingredient extends Component {
     state = {
-        ingredient: []
+        ingredient: [],
+        formValueList: {
+            "ingredient-currency": {
+                value: '',
+                valid: false
+            },
+            "ingredient-measure": {
+                value: '',
+                valid: false
+            },
+            "ingredient-name": {
+                value: '',
+                valid: false
+            },
+            "ingredient-price": {
+                value: '',
+                valid: false
+            },
+            "ingredient-quantity": {
+                value: '',
+                valid: false
+            }
+        },
+        validForm: false 
     }
 
     componentWillMount() {
@@ -30,7 +53,40 @@ class Ingredient extends Component {
                 </tr>
             );
     }
+
+    checkIfFormIsValid = () => {
+        const arr = Object
+            .keys(this.state.formValueList)
+            .map(ingredient => this.state.formValueList[ingredient].valid)
+            .filter(valid => !valid)
+        this.setState({validForm: !arr.length});
+    }
+
+    updateStateWithForm = (aParam) => {
+        const {id, value, validity: {valid}} = aParam.target;
+        if (id === 'create-it') {
+            window.alert('create it in the dabase');
+            return;
+        }
+        
+        
+        const {formValueList} = this.state;
+        formValueList[id] = {
+            value,
+            valid
+        };
+        this.setState({formValueList})
+
+        this.checkIfFormIsValid();
+
+        // console.group();
+        // console.log(aParam.target.id)
+        // console.log(aParam.target.value)
+        // console.log(valid)
+        // console.groupEnd();
+    }
     render() {
+        const { validForm } = this.state;
         return (
             [<table className="ingredient__full-table">
                 <thead>
@@ -47,7 +103,9 @@ class Ingredient extends Component {
                     {this.renderIngredientList()}
                 </tbody>
             </table>,
-            <AddIngredient/>]
+            <AddIngredient 
+                addIngredientListener={this.updateStateWithForm}
+                validForm={validForm}/>]
         );
     }
 }
