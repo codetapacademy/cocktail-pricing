@@ -124,6 +124,7 @@ class Cocktail extends Component{
     render(){
         return(
             <div>
+                <h1>Manage Cocktail</h1>
                 <div>{this.renderCocktail()}</div>
                 <AddCocktail 
                     fbi={this.addCocktailToState} />

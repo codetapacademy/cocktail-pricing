@@ -107,7 +107,8 @@ class Ingredient extends Component {
     render() {
         const { validForm } = this.state;
         return (
-            [<table className="ingredient__full-table">
+            [<h1>Manage Ingredient</h1>,
+            <table className="ingredient__full-table">
                 <thead>
                     <tr>
                         <td>ID</td>
